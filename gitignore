@@ -1,0 +1,58 @@
+.gradle*
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+*~
+
+# Log files
+*.log
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### Visual Studio Code
+.vscode
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+dist
+
+#Igonre diagram build output directory
+diagram/bin
+
+# Ignore patch-generated files
+*.rej
+*.orig
+
+# Run configurations for EnvFile plugin
+.run*.json
+.run*.yaml
+.run*.yml
+/run*.yaml
+
+# Python-related
+*.pyc
+*.pyo
+*.egg
+*.egg-info/
+*/pinned.txt
+*/activate
+*/MANIFEST
+.tox*
+.venv*
+.env
+
+# Test-related
+lastfailed
+
+# MAC-specific files
+.DS_Store
+
+# buf files
+buf.lock
