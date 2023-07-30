@@ -9,20 +9,36 @@ public class Socialka {
         System.out.println("Nyní bude následovat dotazník o vaší situaci.");
 
         System.out.println("Máte dítě:");
-        boolean maDite = vstup.nextBoolean();
-        System.out.println("vaše odpověď: " + maDite);
+        String odpoved = vstup.nextLine().trim();
+        System.out.println("vaše odpověď: " + odpoved);
+        boolean maDite;
 
-        System.out.println("Vyplňte věk dítěte?");
-        int vek = vstup.nextInt();
-        System.out.println("vaše odpověď: " + vek);
+        if (odpoved.equals("ano")) {
+            maDite = true;
+        } else {
+            maDite = false;
+        }
 
-        System.out.println("Vyplňte váš plat");
-        int plat = vstup.nextInt();
-        System.out.println("vaše odpověď: " + plat);
+        int vek = 0;
+        if (maDite == false) {
+            System.out.println("Nema narok na prispevek");
+            System.exit(0);
+        } else {
+            System.out.println("Vyplňte věk dítěte?");
+            vek = vstup.nextInt();
+            System.out.println("vaše odpověď: " + vek);
+        }
 
         System.out.println("Máte práci?");
-        boolean maPraci =vstup.nextBoolean();
+        boolean maPraci = vstup.nextBoolean();
         System.out.println("vaše odpověď: " + maPraci);
+
+        int plat = 1;
+        if (maPraci == true) {
+            System.out.println("Vyplňte váš plat");
+            plat = vstup.nextInt();
+            System.out.println("vaše odpověď: " + plat);
+        }
 
         System.out.println("Vyhodnocení dotazníku :");
 
