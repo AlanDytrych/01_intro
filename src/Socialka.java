@@ -9,7 +9,7 @@ public class Socialka {
         System.out.println("Nyní bude následovat dotazník o vaší situaci.");
 
         System.out.println("Máte dítě:");
-        String odpoved = vstup.nextLine().trim();
+        String odpoved = vstup.nextLine();
         System.out.println("vaše odpověď: " + odpoved);
         boolean maDite;
 
