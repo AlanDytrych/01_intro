@@ -11,27 +11,25 @@ public class Socialka {
         System.out.println("Máte dítě:");
         String odpoved = vstup.nextLine();
         System.out.println("vaše odpověď: " + odpoved);
-        boolean maDite;
 
-        if (odpoved.equals("ano")) {
-            maDite = true;
-        } else {
-            maDite = false;
-        }
+        //boolean maDite = (odpoved.equals("ano")) ? true : false;
+        boolean maDite = jeSouhlas(odpoved);
 
         int vek = 0;
         if (maDite == false) {
-            System.out.println("Nema narok na prispevek");
+            System.out.println("Nemate narok na prispevek");
             System.exit(0);
         } else {
             System.out.println("Vyplňte věk dítěte?");
             vek = vstup.nextInt();
             System.out.println("vaše odpověď: " + vek);
-        }
+        }                
 
         System.out.println("Máte práci?");
+//        String prace = vstup.nextLine();
         boolean maPraci = vstup.nextBoolean();
-        System.out.println("vaše odpověď: " + maPraci);
+//        System.out.println("vaše odpověď: " + prace);
+//        boolean maPraci = jeSouhlas(prace);
 
         int plat = 1;
         if (maPraci == true) {
@@ -40,7 +38,7 @@ public class Socialka {
             System.out.println("vaše odpověď: " + plat);
         }
 
-        System.out.println("Vyhodnocení dotazníku :");
+        System.out.println("Vyhodnocení dotazníku:");
 
         if (maDite == true
                 && vek <= 18 && vek >= 5
@@ -54,5 +52,15 @@ public class Socialka {
             System.out.println("Nema narok na prispevek");
         }
     }
+    private static boolean jeSouhlas(String odpoved) {
+        boolean vyhodnoceni;
 
+        if (odpoved.equals("ano")) {
+            vyhodnoceni = true;
+        } else {
+            vyhodnoceni = false;
+        }
+        System.out.println("vyhodnocení je " + vyhodnoceni);
+        return vyhodnoceni;
+    }
 }
